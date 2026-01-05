@@ -299,7 +299,20 @@ plt.show()
 
 Use `plt.barh()` to plot horizontal bar chart.
 ```python
-plt.barh(dict.keys(), dict.values()) # Horizontal bar
+dict = {
+  'Ngôn ngữ': 60,
+  'Kế toán': 310,
+  'QTKD': 360,
+  'CNTT': 580,
+  'Điện tử': 340,
+  'Sinh học': 290
+}
+
+plt.barh(dict.keys(), dict.values(), align='center') # Horizontal bar
+plt.title("Các ngành tuyển sinh của ĐHQT")
+plt.xlabel("Ngành")
+plt.ylabel("Chỉ tiêu")
+plt.show()
 ```
 
 ![hbar](./img/horizontal-bar.png)
