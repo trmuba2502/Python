@@ -321,6 +321,29 @@ plt.show()
 
 Use `bottom` argument in `plt.bar()`. For example.
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+categories = ['A', 'B', 'C', 'D']
+part1 = [20, 35, 30, 25]
+part2 = [25, 32, 34, 20]
+
+x = np.arange(len(categories)) # x = [0,1,2,3]
+ 
+plt.bar(x, part1, label='Type 1')
+# Define the bottom as part1, so that
+# part2 = part1 + part2 values. (part1 = offset)
+plt.bar(x, part2, bottom=part1, label='Type 2')
+
+plt.xticks(x, categories) # assign labels to x axis
+plt.ylabel('Value')
+plt.title('Stacked Bar Plot')
+plt.legend()
+plt.show()
+```
+![stck-bar1](./img/stck-bar1.png)
+
+```python
 categories = ['A', 'B', 'C', 'D']
 
 # Should define it as numpy array, convenient for 
@@ -343,7 +366,7 @@ plt.title('Stacked Bar Plot')
 plt.legend()
 plt.show()
 ```
-![stck-bar](./img/stck-bar.png)
+![stck-bar2](./img/stck-bar2.png)
 
 ### 2 bar plots
 
