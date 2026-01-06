@@ -418,8 +418,7 @@ plt.title('Grouped Bar Plot')
 plt.legend()
 plt.show()
 ```
-![grp-bar](./img/grp-bar.png)
-
+![kq](./img/bar_b.png)
 The explaination can be visualized through this image.
 <div style="text-align: center">
   <img src="./img/explain.png">
@@ -573,6 +572,61 @@ plt.hist(data)
 
 plt.show()
 ```
+
+```python
+from numpy import *
+from pandas import *
+from matplotlib.pyplot import *
+
+x1 = linspace(0.0, 5.0, 200)
+x2 = linspace(0.0, 2.0)
+
+y1 = cos(2 * pi * x1) * exp(-x1)
+y2 = cos(2 * pi * x2)
+
+figure(figsize=(10, 10))
+
+subplot(2, 1, 1)
+plot(x1, y1, color = 'blue')
+grid(True)
+
+subplot(2, 1, 2)
+plot(x2, y2, '.-',color = 'blue') 
+grid(True)
+savefig("2cos.png", dpi=300)
+show()
+```
+![aa](./img/2cos.png)
+
+```python
+from numpy import *
+from pandas import *
+from matplotlib.pyplot import *
+
+x = linspace(0.0, 2 * pi, 200)
+
+y1 = cos(x)
+y2 = sin(x)
+
+# highlight_x = pi
+highlight_x = linspace(0, 2 * pi, 10)
+highlight_y1 = cos(highlight_x)
+
+plot(x, y1, color = 'blue')
+# legend("cos(x)")
+plot(highlight_x, highlight_y1,'o', color = "red")
+plot(x, y2 ,color = 'black') 
+# legend("sin(x)")
+grid(True)
+legend(["cos(x)","sin(x)"])
+savefig("1cos.png", dpi=300)
+show()
+```
+![aa](./1cos.png)
+
+![aa](./img/s1.png)
+![aa](./img/s2.png)
+![aa](./img/s3.png)
 
 ---
 
